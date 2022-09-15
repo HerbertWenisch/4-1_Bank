@@ -5,9 +5,13 @@
 
 public class Konto {
   double kontostand;
+  int kontonummer; 
+  int pin;
   
-  Konto(){
+  Konto(int eineNummer, int einePin){
       kontostand = 100;
+      kontonummer = eineNummer;
+      pin = einePin;
   }
 
   
@@ -15,4 +19,8 @@ public class Konto {
       kontostand += betrag;
   }
     
+  void zeigeKontostand(int pinEingabe){
+      if (pinEingabe == pin) System.out.println("Kontostand: " + kontostand);
+      else System.out.println("falsche Pin!");
+  }
 }
